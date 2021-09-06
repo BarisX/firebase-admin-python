@@ -217,8 +217,8 @@ class App:
         App._validate_project_id(self._options.get('projectId'))
         self._project_id_initialized = False
 
-    @classmethod
-    def _validate_project_id(cls, project_id):
+    @staticmethod
+    def _validate_project_id(project_id):
         if project_id is not None and not isinstance(project_id, str):
             raise ValueError(
                 'Invalid project ID: "{0}". project ID must be a string.'.format(project_id))
